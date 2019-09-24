@@ -1,34 +1,71 @@
 {
-  "name": "ui-kit",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "antd": "^3.23.4",
-    "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "lean-theme",
+    "version": "0.17.25",
+    "main": "dist/index.js",
+    "private": true,
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "7.4.4",
+        "antd": "3.19.3",
+        "babel-core": "7.0.0-bridge.0",
+        "classnames": "2.2.6",
+        "jquery": "1.12.4",
+        "loaders.css": "0.1.2",
+        "lodash": "4.17.14",
+        "prop-types": "^15.7.2",
+        "react": "16.8.6",
+        "react-dom": "16.8.6",
+        "react-input-mask": "2.0.4",
+        "react-onclickoutside": "6.8.0",
+        "react-router-dom": "5.0.1",
+        "react-scripts": "3.0.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.0.0",
+        "@storybook/addon-actions": "5.1.10",
+        "@storybook/addon-links": "5.1.10",
+        "@storybook/addons": "5.1.10",
+        "@storybook/cli": "5.1.10",
+        "@storybook/react": "5.1.10",
+        "babel-loader": "8.0.6",
+        "husky": "2.4.0",
+        "lint-staged": "8.2.0",
+        "node-sass": "4.12.0",
+        "prettier": "1.18.2",
+        "storybook-readme": "5.0.8"
+    },
+    "scripts": {
+        "sb-init": "sb init --type react -f",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+        "build-win": "rm -rf dist && SET NODE_ENV=production && babel src --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+        "test": "react-scripts test",
+        "watch": "node scripts/watch.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,json,scss}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
 }

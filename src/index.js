@@ -1,3 +1,3 @@
-import ButtonCustom from "./components/common/Button";
+import ButtonCustom from './components/common/Button'
 
-export const Button = ButtonCustom;
+export const Button = ButtonCustom
