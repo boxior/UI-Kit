@@ -1,6 +1,6 @@
 {
-    "name": "lean-theme",
-    "version": "0.17.25",
+    "name": "ui-kit",
+    "version": "1.0.0",
     "main": "dist/index.js",
     "private": true,
     "dependencies": {
